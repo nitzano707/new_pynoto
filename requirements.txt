@@ -1,4 +1,4 @@
 Flask
 pyannote.audio
-torch==2.0.1
-torchaudio==2.0.1
+torch>=2.0.0
+torchaudio>=2.0.0
