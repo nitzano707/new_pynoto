@@ -4,9 +4,12 @@ import os
 
 app = Flask(__name__)
 
-# אתחול המודל של pyannote.audio עם Hugging Face Token
+# טוען את הטוקן מהסביבה
 HUGGING_FACE_TOKEN = os.getenv("HF_TOKEN")
-pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization", use_auth_token=HUGGING_FACE_TOKEN)
+pipeline = Pipeline.from_pretrained(
+    "pyannote/speaker-diarization",
+    use_auth_token=HUGGING_FACE_TOKEN
+)
 
 @app.route('/diarize', methods=['POST'])
 def diarize():
